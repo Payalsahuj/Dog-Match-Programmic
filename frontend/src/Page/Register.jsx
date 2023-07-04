@@ -131,9 +131,9 @@ export function Registration() {
     }
     return (<Box >
         {isLoading?<Loading/>:<Box>
-        <Navbar />
+     
         <Box
-            height={'300px'} backgroundColor={'#1D4044'}></Box>
+            height={'200px'} backgroundColor={'#1D4044'}></Box>
         <Box >
             <Box data-aos="fade-left" position='relative' top='-100px' borderRadius={'10px'} left={'14%'} backgroundColor='#eef4fae6' width={'70%'} boxShadow='rgba(0, 0, 0, 0.35) 0px 5px 15px'>
                 <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>

@@ -23,11 +23,11 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
-  import { Link as Reactlink } from 'react-router-dom';
+  import {  Link as Reactlink, useNavigate } from 'react-router-dom';
   import { useEffect, useState } from 'react';
   
   export default function Navbar() {
-  
+    const navigate=useNavigate()
     const [token,setToken]=useState(false)
     const { isOpen, onToggle } = useDisclosure();
     useEffect(()=>{
@@ -42,7 +42,8 @@ import {
   
    function handlelogout(){
     localStorage.removeItem("token")
-    setToken(false)
+    setToken(false);
+    navigate("/")
    }
     
   
@@ -72,7 +73,7 @@ import {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Reactlink to='/'><Image src={logo} width={{base: '90px', md:'100px'}} height={'50px'} mt={2}  alt='Logo' /></Reactlink>
+            <Reactlink to='/home'><Image src={logo} width={{base: '90px', md:'100px'}} height={'50px'} mt={2}  alt='Logo' /></Reactlink>
           
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -300,7 +301,7 @@ import {
   const NAV_ITEMS = [
     {
         label: 'WINNERS',
-        href:"/WINNER"
+        href:"/winner"
       }
   ];
   
@@ -310,7 +311,7 @@ import {
   const NAV_ITEMSMob = [
     {
       label: 'WINNERS',
-      href:"/WINNER"
+      href:"/winner"
     }
   ];
   
